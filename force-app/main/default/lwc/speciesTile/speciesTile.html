@@ -1,0 +1,19 @@
+<template>
+    <lightning-card  variant="Narrow"  title={specie.Name} icon-name="custom:custom5">
+        <lightning-button  label="View Details" slot="actions"></lightning-button>
+
+        <!-- Body Start -->
+        <p class="slds-p-horizontal_small">{specie.Description__c}</p>
+        <img
+            class="specie slds-align_absolute-center slds-var-m-around_medium" 
+            src={specie.Image_URL__c}
+            alt={specie.Name}
+        />
+
+        <p class="slds-var-p-horizontal_small">{specie.Location__c}</p>
+        <!-- Body End -->
+
+        <!-- footer Start -->
+        <p slot="footer">Card Footer</p>  
+    </lightning-card>
+</template>
