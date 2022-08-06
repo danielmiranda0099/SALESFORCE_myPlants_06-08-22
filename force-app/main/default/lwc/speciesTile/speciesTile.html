@@ -1,19 +1,39 @@
 <template>
-    <lightning-card  variant="Narrow"  title={specie.Name} icon-name="custom:custom5">
-        <lightning-button  label="View Details" slot="actions"></lightning-button>
+    <div class="slds-align_absolute-center slds-var-p-horizontal_small1">
+        <lightning-card  variant="Narrow"  title={specie.Name} icon-name="custom:custom5">
+            <lightning-button  
+                label="View Details" 
+                slot="actions"
+                onclick={navigateToRecordViewPage}
+            >
+            </lightning-button>
 
-        <!-- Body Start -->
-        <p class="slds-p-horizontal_small">{specie.Description__c}</p>
-        <img
-            class="specie slds-align_absolute-center slds-var-m-around_medium" 
-            src={specie.Image_URL__c}
-            alt={specie.Name}
-        />
+            <!-- Body Start -->
+            <p class="slds-p-horizontal_small">{specie.Description__c}</p>
+            <img
+                class="specie slds-align_absolute-center slds-var-m-around_medium" 
+                src={specie.Image_URL__c}
+                alt={specie.Name}
+            />
+            <div class="slds-var-p-horizontal_small slds-align_absolute-center">
+                <template if:true={isOutdoors}>
+                    <lightning-icon icon-name="custom:custom3" alternative-text="Outdoors" title="Outdoors">
 
-        <p class="slds-var-p-horizontal_small">{specie.Location__c}</p>
-        <!-- Body End -->
+                    </lightning-icon>
+                </template>
 
-        <!-- footer Start -->
-        <p slot="footer">Card Footer</p>  
-    </lightning-card>
+                <template if:true={isIndoors}>
+                    <lightning-icon icon-name="standard:home" alternative-text="indoors" title="indoors">
+
+                    </lightning-icon>
+                </template>
+            </div>
+
+            <!-- <p class="slds-var-p-horizontal_small">{specie.Location__c}</p>
+             Body End -->
+
+            <!-- footer Start -->
+            <p slot="footer">Card Footer</p>  
+        </lightning-card>
+    </div>
 </template>
