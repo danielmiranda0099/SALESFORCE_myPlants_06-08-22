@@ -1,0 +1,23 @@
+<template>
+  <div class="slds-align_absolute-center" style="min-width: 100%">
+    <lightning-card variant="Narrow" title="Hello" icon-name="custom:custom5">
+      <lightning-button label="View Detail" slot="actions"></lightning-button>
+
+      <!-- body start -->
+
+      <p class="slds-var-p-horizontal_small">{specie.Description}</p>
+
+      <img
+        class="specie slds-align_absolute-center slds-var-m-around_medium"
+        src={specie.Image_URL__c}
+        alt={specie.Name}
+      />
+
+      <p class="slds-var-p-horizontal_small">{specie.Location__c}</p>
+
+      <!-- body end -->
+
+      <p slot="footer">Card Footer</p>
+    </lightning-card>
+  </div>
+</template>
